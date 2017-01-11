@@ -9,31 +9,21 @@
 <body>
 	<div class="row">
 		<div class="medium-12 columns">
-			<h1>Hello World</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis, nihil quae labore nisi molestiae perspiciatis quam commodi voluptas perferendis nam veniam saepe ipsa doloribus tempore, mollitia suscipit ipsam! Ipsa!</p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis, nihil quae labore nisi molestiae perspiciatis quam commodi voluptas perferendis nam veniam saepe ipsa doloribus tempore, mollitia suscipit ipsam! Ipsa!</p>
-
-			<hr>
+			<h1>Todo List</h1>
+			<ul>
+				<li>Export sql file on container stop</li>
+				<li><del>Dynamic ports when provided one is in use</del></li>
+				<li>Create custom image with tools needed for WordPress development</li>
+			</ul>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="medium-6 columns">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis, nihil quae labore nisi molestiae perspiciatis quam commodi voluptas perferendis nam veniam saepe ipsa doloribus tempore, mollitia suscipit ipsam! Ipsa!</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis, nihil quae labore nisi molestiae perspiciatis quam commodi voluptas perferendis nam veniam saepe ipsa doloribus tempore, mollitia suscipit ipsam! Ipsa!</p>
+		<div class="medium-12 columns">
+			<?php
+				phpinfo();
+			?>
 		</div>
-		<div class="medium-6 columns">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis, nihil quae labore nisi molestiae perspiciatis quam commodi voluptas perferendis nam veniam saepe ipsa doloribus tempore, mollitia suscipit ipsam! Ipsa!</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis, nihil quae labore nisi molestiae perspiciatis quam commodi voluptas perferendis nam veniam saepe ipsa doloribus tempore, mollitia suscipit ipsam! Ipsa!</p>
-		</div>
-	</div>
-
-	<div class="row columns">
-		<?php
-			phpinfo();
-		?>
 	</div>
 </body>
 </html>
