@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "docker": "docker-compose up -d", 
+    "docker": "docker-compose up -d && npm run docker-ports", 
     "docker-stop": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker stop ${CURRENT_DIR_NAME}_nginx_1 ${CURRENT_DIR_NAME}_phpmyadmin_1 ${CURRENT_DIR_NAME}_phpfpm_1 ${CURRENT_DIR_NAME}_mysql_1",
     "docker-rm": "npm run docker-stop && CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker rm ${CURRENT_DIR_NAME}_nginx_1 ${CURRENT_DIR_NAME}_phpmyadmin_1 ${CURRENT_DIR_NAME}_phpfpm_1 ${CURRENT_DIR_NAME}_mysql_1",
-    "docker-ports": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && echo 'server:' && docker port ${CURRENT_DIR_NAME}_nginx_1 && printf '\n' && echo 'phpmyadmin:' && docker port ${CURRENT_DIR_NAME}_phpmyadmin_1"
+    "docker-ports": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && NGINXPORT=$(docker port ${CURRENT_DIR_NAME}_nginx_1 80) && PHPMYADMINPORT=$(docker port ${CURRENT_DIR_NAME}_phpmyadmin_1 80) && echo server: $NGINXPORT  && echo phpmyadmin: $PHPMYADMINPORT && open -a 'Google Chrome' http://$PHPMYADMINPORT http://$NGINXPORT"
   }
 }
