@@ -3,7 +3,7 @@ services:
     nginx:
         image: tutum/nginx
         ports:
-            - "80:80"
+            - "80"
         links:
             - phpfpm
         volumes:
@@ -30,7 +30,7 @@ services:
         links:
             - mysql
         ports:
-            - 8183:80
+            - 80
         environment:
             MYSQL_USERNAME: admin
             MYSQL_ROOT_PASSWORD: admin

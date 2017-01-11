@@ -11,6 +11,7 @@
   "scripts": {
     "docker": "docker-compose up -d", 
     "docker-stop": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker stop ${CURRENT_DIR_NAME}_nginx_1 ${CURRENT_DIR_NAME}_phpmyadmin_1 ${CURRENT_DIR_NAME}_phpfpm_1 ${CURRENT_DIR_NAME}_mysql_1",
-    "docker-rm": "npm run docker-stop && CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker rm ${CURRENT_DIR_NAME}_nginx_1 ${CURRENT_DIR_NAME}_phpmyadmin_1 ${CURRENT_DIR_NAME}_phpfpm_1 ${CURRENT_DIR_NAME}_mysql_1"
+    "docker-rm": "npm run docker-stop && CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker rm ${CURRENT_DIR_NAME}_nginx_1 ${CURRENT_DIR_NAME}_phpmyadmin_1 ${CURRENT_DIR_NAME}_phpfpm_1 ${CURRENT_DIR_NAME}_mysql_1",
+    "docker-ports": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && echo 'server:' && docker port ${CURRENT_DIR_NAME}_nginx_1 && printf '\n' && echo 'phpmyadmin:' && docker port ${CURRENT_DIR_NAME}_phpmyadmin_1"
   }
 }
