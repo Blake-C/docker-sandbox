@@ -17,7 +17,7 @@ services:
         ports:
             - "9000"
         volumes:
-            - ./public:/usr/share/nginx/html
+            - ./public:/var/www/html
     mysql:
         image: mariadb
         volumes:
