@@ -1,4 +1,8 @@
 .phpintel
 .DS_Store
-data/**/*
-!data/.gitit
+
+data/backups/**/*
+data/mysql-databases/**/*
+
+!data/backups/.gitit
+!data/mysql-databases/.gitit
